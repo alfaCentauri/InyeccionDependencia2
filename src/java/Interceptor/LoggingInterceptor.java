@@ -35,10 +35,10 @@ public class LoggingInterceptor {
     @AroundInvoke
     public Object LogMethodCall(InvocationContext invocationContext) throws Exception{
         logger.log(Level.INFO, new StringBuilder("Entrando ").append(
-                invocationContext.getMethod().getName()).append("method").toString());
+                invocationContext.getMethod().getName()).append(" method").toString());
         Object retVal = invocationContext.proceed();
         logger.log(Level.INFO, new StringBuilder("Saliendo ").append(
-                invocationContext.getMethod().getName()).append("method").toString());
+                invocationContext.getMethod().getName()).append(" method").toString());
         return retVal;
     }
 }
